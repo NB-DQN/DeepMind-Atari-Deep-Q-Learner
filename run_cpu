@@ -1,5 +1,7 @@
 #!/bin/bash
 
+qlua_path=$PWD"/torch/bin"
+
 if [ -z "$1" ]
   then echo "Please provide the name of the game, e.g.  ./run_cpu breakout "; exit 0
 fi
@@ -43,4 +45,4 @@ args="-framework $FRAMEWORK -game_path $game_path -name $agent_name -env $ENV -e
 echo $args
 
 cd dqn
-qlua train_agent.lua $args
+$qlua_path/qlua train_agent.lua $args
